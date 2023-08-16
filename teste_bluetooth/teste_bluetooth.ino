@@ -1,7 +1,7 @@
 #include "BluetoothSerial.h"
 #include <LiquidCrystal.h>
 
-LiquidCrystal lcd(13, 12, 14, 27, 26, 25);
+//LiquidCrystal lcd(13, 12, 14, 27, 26, 25);
 BluetoothSerial SerialBT;
 char cmd;
 const int potPin = 34;
@@ -11,13 +11,13 @@ void setup()
   //Serial.begin(115200);
   delay(1000);
   SerialBT.begin("ESP32");
-  pinMode(23,OUTPUT);
-  lcd.begin(16, 2);
+  pinMode(13,OUTPUT);
+  //lcd.begin(16, 2);
   // Clears The LCD Display
   //lcd.clear();
-  lcd.print("Hello World!");
-  lcd.setCursor(1,1);
-  lcd.print("192");
+  //lcd.print("Hello World!");
+  //lcd.setCursor(1,1);
+  //lcd.print("192");
 
 }
 
@@ -33,11 +33,11 @@ void loop() {
   }
   if(cmd =='1')
   {
-    digitalWrite(23, HIGH);
+    digitalWrite(13, HIGH);
   }
   if(cmd == '0')
   {
-    digitalWrite(23, LOW);
+    digitalWrite(13, LOW);
   }
 
 
