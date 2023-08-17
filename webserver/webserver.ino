@@ -26,6 +26,8 @@ void setup() {
   Serial.println(WiFi.localIP());
   
   server.on("/", HTTP_GET, handleRoot);
+  server.on("/getADCValues", HTTP_GET, handleGetADCValues); // Definindo o manipulador para o endpoint /getADCValues
+  
   server.begin();
   
   Serial.println("Servidor Web iniciado");
@@ -36,17 +38,10 @@ void loop() {
 }
 
 void handleRoot() {
-  int adcValue1 = analogRead(adcPin1);
-  int adcValue2 = analogRead(adcPin2);
-  int adcValue3 = analogRead(adcPin3);
-  int adcValue4 = analogRead(adcPin4);
-
   String html = "<!DOCTYPE html><html>";
   html += "<head><title>Valores do ADC</title>";
   html += "<style>";
-  html += "body { background-color: #222; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; }";
-  html += ".container { max-width: 800px; margin: 50px auto; text-align: center; }";
-  html += "h1 { color: #FFD700; }";
+  html += "/* Seus estilos CSS aqui */";
   html += "</style>";
   html += "<script>";
   html += "function updateValues() {";
