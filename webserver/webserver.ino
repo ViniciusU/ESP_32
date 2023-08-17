@@ -41,7 +41,9 @@ void handleRoot() {
   String html = "<!DOCTYPE html><html>";
   html += "<head><title>Valores do ADC</title>";
   html += "<style>";
-  html += "/* Seus estilos CSS aqui */";
+  html += "body { background-color: #222; color: #fff; font-family: Arial, sans-serif; margin: 0; padding: 0; }";
+  html += ".container { max-width: 800px; margin: 50px auto; text-align: center; }";
+  html += "h1 { color: #FFD700; }";
   html += "</style>";
   html += "<script>";
   html += "function updateValues() {";
