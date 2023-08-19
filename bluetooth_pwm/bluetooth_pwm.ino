@@ -1,3 +1,4 @@
+
 #include "BluetoothSerial.h"
 
 
@@ -23,9 +24,10 @@ void setup()
 
 void loop() 
 {
+  
   if(SerialBT.available())
   {
-    cmd = SerialBT.read();
+    valor = SerialBT.read();
     //valor = cmd.toInt();
   }
   if(valor > 254)
@@ -34,8 +36,9 @@ void loop()
   }
   else
   {
-  //ledcWrite(ledCanal, valor);
-  SerialBT.write(cmd);
-  } 
+  ledcWrite(ledCanal, valor);
+  
+  }
+  SerialBT.print(valor); 
   delay(1000);
 }
