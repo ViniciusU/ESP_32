@@ -15,8 +15,9 @@ void setup()
 void loop() 
 {
   potValue = analogRead(potPin);
-  SerialBT.println("O valor do potenciometro é: ");
+  SerialBT.print("O valor do potenciometro é: ");
   SerialBT.print(potValue);
+  SerialBT.println();
   delay(1000);
 
 
