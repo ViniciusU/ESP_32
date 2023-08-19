@@ -27,9 +27,8 @@ void setup()
   pinMode(ledBlue,OUTPUT);
    // configura o PWM através dos parâmetros
   ledcSetup(ledCanal, freq, resolucao);
-  
   // Anexar o canal ao GPIO
-  ledcAttachPin(ledPino, ledCanal);
+  ledcAttachPin(pwm_pin, ledCanal);
  
   
 }
@@ -42,9 +41,9 @@ void loop()
   SerialBT.println(sensorValue1);
   SerialBT.println("/");
 
-  int switchState = SerialBT.read();
+  int valor = SerialBT.read();
 
-   if (Serial.available())
+   if (SerialBT.available())
   {
     valor = SerialBT.read();
     if (valor == 245) digitalWrite(ledRed, HIGH);
