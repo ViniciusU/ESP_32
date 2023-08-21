@@ -38,7 +38,7 @@ void loop()
 {
   //  Analogico Pot1
   sensorValue1  = analogRead(potPin);
-
+  sensorValue1 = (5*sensorValue1/(0.01*4096));
   SerialBT.println(sensorValue1);
   SerialBT.println("/");
 
